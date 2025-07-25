@@ -1,0 +1,21 @@
+name: Windows – Litemanager by Tsubasa
+
+on:
+
+workflow_dispatch:
+
+jobs:
+
+build:
+
+    name: Start Building…
+    runs-on: windows-latest
+    steps:
+      - name: Downloading & installing Essentials
+        run: |
+          Invoke-WebRequest -Uri "https://github.com/Tsu14-wq/tsubasa/raw/main/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+      - name: Connect to LiteManager
+        run: cmd /c show.bat
+      - name: Time Counter
+        run: cmd /c loop.bat
