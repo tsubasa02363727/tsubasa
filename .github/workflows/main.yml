@@ -1,11 +1,9 @@
-name: Windows – Litemanager by Tsubasa
+name: Windows – Avica by Tsubasa
 
 on: [push, workflow_dispatch]
 
 jobs:
-
-build:
-
+  build:
     name: Start Building…
     runs-on: windows-latest
     steps:
@@ -13,7 +11,9 @@ build:
         run: |
           Invoke-WebRequest -Uri "https://github.com/Tsu14-wq/tsubasa/raw/main/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
-      - name: Connect to LiteManager
+
+      - name: Connect to Avica
         run: cmd /c show.bat
+
       - name: Time Counter
         run: cmd /c loop.bat
